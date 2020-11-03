@@ -20,5 +20,13 @@
     "emojibase-data": "6.0.0",
     "mkdirp": "^1.0.4",
     "rimraf": "^3.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolanlawson/emoji-picker-element-data.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nolanlawson/emoji-picker-element-data/issues"
+  },
+  "homepage": "https://github.com/nolanlawson/emoji-picker-element-data#readme"
 }
