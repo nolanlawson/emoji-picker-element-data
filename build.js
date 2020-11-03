@@ -20,7 +20,7 @@ const emojiKeys = new Set([
 
 const skinKeys = new Set(['tone', 'emoji', 'version'])
 
-async function main() {
+async function main () {
   const emojibaseDir = path.resolve('./node_modules', 'emojibase-data')
   const langs = fs.readdirSync(emojibaseDir)
     .filter(file => !IGNORE_FOLDERS.includes(file))
@@ -66,6 +66,8 @@ async function main() {
               }
             }
           }
+
+          return outEmoji
         })
       const outPath = path.resolve('./', lang, shortcodeFile.replace('.json', ''))
       mkdirp.sync(outPath)
