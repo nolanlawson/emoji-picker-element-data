@@ -1,0 +1,24 @@
+{
+  "name": "emoji-picker-element-data",
+  "version": "1.0.0",
+  "description": "JSON files built from emojibase-data, designed for emoji-picker-element",
+  "type": "module",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "node build.js"
+  },
+  "keywords": [
+    "emoji",
+    "picker",
+    "element",
+    "data",
+    "emojibase"
+  ],
+  "author": "Nolan Lawson <nolan@nolanlawson.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "emojibase-data": "6.0.0",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2"
+  }
+}
