@@ -31,40 +31,45 @@ async function main() {
     const shortcodeFiles = fs.readdirSync(path.resolve(emojibaseDir, lang, 'shortcodes'))
     const baseData = JSON.parse(fs.readFileSync(path.resolve(emojibaseDir, lang, 'data.json'), 'utf8'))
     for (const shortcodeFile of shortcodeFiles) {
-      const data = JSON.parse(JSON.stringify(baseData))
       const shortcodeData = JSON.parse(fs.readFileSync(
         path.resolve(emojibaseDir, lang, 'shortcodes', shortcodeFile),
         'utf8'
       ))
 
-      for (const emoji of data) {
-        // normalize shortcodes to an array of strings or empty
-        let shortcodes = shortcodeData[emoji.hexcode]
-        if (!shortcodes) {
-          console.log('missing shortcodes', lang, shortcodeFile, emoji.hexcode)
-          shortcodes = []
-        } else if (!Array.isArray(shortcodes)) {
-          shortcodes = [shortcodes]
-        }
-        emoji.shortcodes = shortcodes
-
-        // trim keys we don't need
-        for (const key of Object.keys(emoji)) {
-          if (!emojiKeys.has(key)) {
-            delete emoji[key]
+      const outData = baseData
+        .filter(emoji => 'group' in emoji) // skip odd emoji with no group, e.g. regional indicator (1F1E6)
+        .map(emoji => {
+          const outEmoji = {}
+          // normalize shortcodes to an array of strings
+          // sometimes these don't exist for the given shortcodes file though (e.g. too-new emoji)
+          let shortcodes = shortcodeData[emoji.hexcode]
+          if (shortcodes) {
+            if (!Array.isArray(shortcodes)) {
+              shortcodes = [shortcodes]
+            }
+            outEmoji.shortcodes = shortcodes
           }
-        }
-        if (emoji.skins) {
-          for (const skinKey of Object.keys(emoji.skins)) {
-            if (!skinKeys.has(skinKey)) {
-              delete emoji.skins[skinKey]
+
+          // trim keys we don't need
+          for (const key of Object.keys(emoji)) {
+            if (emojiKeys.has(key)) {
+              if (key === 'skins') {
+                const skins = {}
+                for (const skinKey of Object.keys(emoji.skins)) {
+                  if (skinKeys.has(skinKey)) {
+                    skins[skinKey] = emoji.skins[skinKey]
+                  }
+                }
+                outEmoji.skins = skins
+              } else {
+                outEmoji[key] = emoji[key]
+              }
             }
           }
-        }
-      }
+        })
       const outPath = path.resolve('./', lang, shortcodeFile.replace('.json', ''))
       mkdirp.sync(outPath)
-      fs.writeFileSync(path.resolve(outPath, 'data.json'), JSON.stringify(data), 'utf8')
+      fs.writeFileSync(path.resolve(outPath, 'data.json'), JSON.stringify(outData), 'utf8')
     }
   }
 }
