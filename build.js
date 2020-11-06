@@ -54,11 +54,15 @@ async function main () {
           for (const key of Object.keys(emoji)) {
             if (emojiKeys.has(key)) {
               if (key === 'skins') {
-                const skins = {}
-                for (const skinKey of Object.keys(emoji.skins)) {
-                  if (skinKeys.has(skinKey)) {
-                    skins[skinKey] = emoji.skins[skinKey]
+                const skins = []
+                for (const skin of emoji.skins) {
+                  const outSkin = {}
+                  for (const skinKey of Object.keys(skin)) {
+                    if (skinKeys.has(skinKey)) {
+                      outSkin[skinKey] = skin[skinKey]
+                    }
                   }
+                  skins.push(outSkin)
                 }
                 outEmoji.skins = skins
               } else {
