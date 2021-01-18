@@ -17,7 +17,7 @@
   "author": "Nolan Lawson <nolan@nolanlawson.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "emojibase-data": "6.0.0",
+    "emojibase-data": "6.1.1",
     "mkdirp": "^1.0.4",
     "rimraf": "^3.0.2"
   },
