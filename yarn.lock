@@ -20,10 +20,10 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-emojibase-data@6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/emojibase-data/-/emojibase-data-6.2.0.tgz#db6c75c36905284fa623f4aa5f468d2be6ed364a"
-  integrity sha512-SWKaXD2QeQs06IE7qfJftsI5924Dqzp+V9xaa5RzZIEWhmlrG6Jt2iKwfgOPHu+5S8MEtOI7GdpKsXj46chXOw==
+emojibase-data@7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/emojibase-data/-/emojibase-data-7.0.1.tgz#a81d7fcd12247f7d94a96dcbdb143e6b6dd5c328"
+  integrity sha512-BLZpOdwyFpZ7lzBWyDtnxmKVm/SJMYgAfp1if3o6n1TVUMSXAf0nikONXl90LZuJ/m3XWPBkkubgCet2BsCGGQ==
 
 fs.realpath@^1.0.0:
   version "1.0.0"
