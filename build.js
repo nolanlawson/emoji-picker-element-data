@@ -58,7 +58,7 @@ async function main () {
                 // TODO: breaking change to rename this
                 outEmoji.annotation = emoji[key]
               } else if (key === 'emoticon') {
-                // In case of an array, just take the first string for backwards compat for pre-v7
+                // In case of an array, just take one string for backwards compat for pre-v7
                 // https://github.com/milesj/emojibase/blob/master/packages/data/CHANGELOG.md#700---2021-10-15
                 // TODO: breaking change to allow arrays as well as strings
                 if (Array.isArray(emoji[key])) {
