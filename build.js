@@ -63,7 +63,7 @@ async function main () {
                 // TODO: breaking change to allow arrays as well as strings
                 if (Array.isArray(emoji[key])) {
                   // These are usually just variations on the capitalization, with the capitalized version last,
-                  // which in my opinion usually looks best (e.g. "XD" instead of "xD", "XO" instead of "xo"
+                  // which in my opinion usually looks best (e.g. "XD" instead of "xD", "XO" instead of "xo")
                   outEmoji[key] = emoji[key][emoji[key].length - 1]
                 } else {
                   outEmoji[key] = emoji[key]
