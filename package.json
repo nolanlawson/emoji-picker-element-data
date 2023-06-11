@@ -17,7 +17,7 @@
   "author": "Nolan Lawson <nolan@nolanlawson.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "emojibase-data": "7.0.1"
+    "emojibase-data": "15.0.0"
   },
   "repository": {
     "type": "git",
