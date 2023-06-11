@@ -1,8 +1,6 @@
-import process from 'process'
-import fs from 'fs'
-import path from 'path'
-import rimraf from 'rimraf'
-import mkdirp from 'mkdirp'
+import process from 'node:process'
+import fs from 'node:fs'
+import path from 'node:path'
 
 const IGNORE_FOLDERS = ['meta', 'messages', 'versions']
 
@@ -27,7 +25,7 @@ async function main () {
     .filter(file => fs.statSync(path.resolve(emojibaseDir, file)).isDirectory())
 
   for (const lang of langs) {
-    rimraf.sync(path.resolve('./', lang))
+    fs.rmSync(path.resolve('./', lang), { recursive: true, force: true })
     const shortcodeFiles = fs.readdirSync(path.resolve(emojibaseDir, lang, 'shortcodes'))
       .filter(_ => _.endsWith('.json'))
     const baseData = JSON.parse(fs.readFileSync(path.resolve(emojibaseDir, lang, 'data.json'), 'utf8'))
@@ -89,7 +87,7 @@ async function main () {
           return outEmoji
         })
       const outPath = path.resolve('./', lang, shortcodeFile.replace('.json', ''))
-      mkdirp.sync(outPath)
+      fs.mkdirSync(outPath, { recursive: true })
       fs.writeFileSync(path.resolve(outPath, 'data.json'), JSON.stringify(outData), 'utf8')
     }
   }

@@ -17,9 +17,7 @@
   "author": "Nolan Lawson <nolan@nolanlawson.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "emojibase-data": "7.0.1",
-    "mkdirp": "^1.0.4",
-    "rimraf": "^3.0.2"
+    "emojibase-data": "7.0.1"
   },
   "repository": {
     "type": "git",
@@ -28,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/nolanlawson/emoji-picker-element-data/issues"
   },
-  "homepage": "https://github.com/nolanlawson/emoji-picker-element-data#readme"
+  "homepage": "https://github.com/nolanlawson/emoji-picker-element-data#readme",
+  "volta": {
+    "node": "18.16.0",
+    "yarn": "1.22.19"
+  }
 }
