@@ -23,6 +23,16 @@ async function main () {
   const langs = fs.readdirSync(emojibaseDir)
     .filter(file => !IGNORE_FOLDERS.includes(file))
     .filter(file => fs.statSync(path.resolve(emojibaseDir, file)).isDirectory())
+    .sort()
+
+  // Check that the files we're going to publish are the same as these files
+  const pkgJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'))
+  const { files } = pkgJson
+  if (JSON.stringify(langs) !== JSON.stringify(files)) {
+    console.info('Found: ' + JSON.stringify(langs))
+    console.info('Expected: ' + JSON.stringify(files))
+    throw new Error('lang files are not the same as package.json files, please update')
+  }
 
   for (const lang of langs) {
     fs.rmSync(path.resolve('./', lang), { recursive: true, force: true })
