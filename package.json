@@ -1,6 +1,6 @@
 {
   "name": "emoji-picker-element-data",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "description": "JSON files built from emojibase-data, designed for emoji-picker-element",
   "type": "module",
   "scripts": {
