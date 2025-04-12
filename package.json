@@ -17,7 +17,7 @@
   "author": "Nolan Lawson <nolan@nolanlawson.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "emojibase-data": "16.0.2"
+    "emojibase-data": "16.0.3"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "url": "https://github.com/nolanlawson/emoji-picker-element-data/issues"
   },
   "homepage": "https://github.com/nolanlawson/emoji-picker-element-data#readme",
-  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c",
+  "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971",
   "files": [
     "bn",
     "da",

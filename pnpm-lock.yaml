@@ -9,13 +9,13 @@ importers:
   .:
     devDependencies:
       emojibase-data:
-        specifier: 16.0.2
-        version: 16.0.2(emojibase@15.3.1)
+        specifier: 16.0.3
+        version: 16.0.3(emojibase@15.3.1)
 
 packages:
 
-  emojibase-data@16.0.2:
-    resolution: {integrity: sha512-vRM82rvhjB4z5jDvxYanK/CZVe1QCu9ihxockyNvitd/aFkTT6Y4eeBW49GoXv5JMCNFrzDarADWrv7tjLcefA==}
+  emojibase-data@16.0.3:
+    resolution: {integrity: sha512-MopInVCDZeXvqBMPJxnvYUyKw9ImJZqIDr2sABo6acVSPev5IDYX+mf+0tsu96JJyc3INNvgIf06Eso7bdTX2Q==}
     peerDependencies:
       emojibase: '*'
 
@@ -24,7 +24,7 @@ packages:
 
 snapshots:
 
-  emojibase-data@16.0.2(emojibase@15.3.1):
+  emojibase-data@16.0.3(emojibase@15.3.1):
     dependencies:
       emojibase: 15.3.1
 
